@@ -7,11 +7,10 @@
   ],
   "license": "ISC",
   "homepage": "",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "reset-css": "*",
-    "jquery": "*"
+    "jquery": "*",
+    "fullpage.js": "^3.0.1"
   }
 }
