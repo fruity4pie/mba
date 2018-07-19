@@ -50,8 +50,9 @@ gulp.task('css-libs', ['sass'], function() {
 gulp.task('scripts', function() {
   return gulp.src([ // Берем все необходимые библиотеки
     'app/libs/jquery/dist/jquery.js',
+    'app/libs/chart.js/dist/Chart.js',
     'app/libs/fullpage/dist/fullpage.js',
-    'app/libs/fullpage/vendors/scrolloverflow.js',
+    'app/libs/owl.carousel/dist/owl.carousel.js',
 		'app/js/main.js'
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js

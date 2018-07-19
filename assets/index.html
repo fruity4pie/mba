@@ -24,19 +24,28 @@
       <div class="header__row">
         <a href="/" class="header__logo"><img src="img/logo.png" alt="MBA Consult"></a>
         <nav class="nav">
-          <ul class="nav__l">
-            <li class="nav__i1">
-              <a href="">Discover</a>
-              <a href="">Our world</a>
-              <a href="">Mass media</a>
-              <a href="">News</a>
-              <a href="">Join us</a>
-            </li>
-            <li class="nav__i2">
-              <ul class="nav__sub-l">
+          <div class="nav__i">
+            <ul class="nav__a-l">
+              <li>
+                <a href="">Discover</a>
+              </li>
+              <li>
+                <a href="">Our world</a>
+              </li>
+              <li>
+                <a href="">Mass media</a>
+              </li>
+              <li>
+                <a href="">News</a>
+              </li>
+              <li>
+                <a href="">Join us</a>
+              </li>
+            </ul>
+            <ul class="nav__m-l">
                 <li>
                   <a href="" >WHO we are</a>
-                  <ul class="nav__sub-h">
+                  <ul class="sub-menu">
                     <li><a href="">What we do</a></li>
                     <li><a href="">OUR story</a></li>
                     <li><a href="">Our thinking</a></li>
@@ -48,7 +57,7 @@
                 </li>
                 <li>
                   <a href="" >Clients</a>
-                  <ul class="nav__sub-h">
+                  <ul class="sub-menu">
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
@@ -60,7 +69,7 @@
                 </li>
                 <li>
                   <a href="" >Investors</a>
-                  <ul class="nav__sub-h">
+                  <ul class="sub-menu">
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
@@ -72,7 +81,7 @@
                 </li>
                 <li>
                   <a href="" >Debtors</a>
-                  <ul class="nav__sub-h">
+                  <ul class="sub-menu">
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
@@ -84,7 +93,7 @@
                 </li>
                 <li>
                   <a href="" >Contacts</a>
-                  <ul class="nav__sub-h">
+                  <ul class="sub-menu">
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
@@ -94,9 +103,8 @@
                     <li><a href=""></a></li>
                   </ul>
                 </li>
-              </ul>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </nav>
         <div class="lang">
           <div href="" class="lang__visible">
@@ -110,7 +118,7 @@
     </div>
   </header>
   <div id="fullpage">
-    <div class="section mba w">
+    <div class="section mba white">
       <video class="video" loop muted data-autoplay>
         <source src="video/vid.mp4">
       </video>
@@ -126,33 +134,49 @@
       </div>
       <a href="" class="b459">Подробнее</a>
     </div>
-    <div class="section clients w">
+    <div class="section clients white">
       <div class="container">
         <div class="row">
           <div class="col1">
-            <div class="t-b">
-              <h2>Клиентам</h2>
-              <p>Возвращаем деньги и должников по агентской схеме. Покупаем долговые портфели. Интегрируем IT-продукты и решения нового поколения.</p>
+            <div class="t-cont atab" data-num="0">
+              <div class="t-b">
+                <h2>Клиентам</h2>
+                <p>Возвращаем деньги и должников по агентской схеме. Покупаем долговые портфели. Интегрируем IT-продукты и решения нового поколения.</p>
+              </div>
+              <a href="#" target="_blank" class="b w">Подробнее</a>
             </div>
-            <a href="#" target="_blank" class="b w">Подробнее</a>
+            <div class="t-cont" data-num="1">
+              <div class="t-b">
+                <h2>Инвесторам</h2>
+                <p>!Возвращаем деньги и должников по агентской схеме. Покупаем долговые портфели. Интегрируем IT-продукты и решения нового поколения.</p>
+              </div>
+              <a href="#" target="_blank" class="b w">Подробнее</a>
+            </div>
+            <div class="t-cont" data-num="2">
+              <div class="t-b">
+                <h2>Должникам</h2>
+                <p>!!Возвращаем деньги и должников по агентской схеме. Покупаем долговые портфели. Интегрируем IT-продукты и решения нового поколения.</p>
+              </div>
+              <a href="#" target="_blank" class="b w">Подробнее</a>
+            </div>
           </div>
           <div class="col2">
             <div class="img-cont">
-              <div class="img-cont__item">
-                <img src="img/img1.jpg" alt="Team">
+              <div class="img-cont__item" data-title="Клиентам">
+                <img src="img/img1.jpg" alt="Team" data-num="0" >
               </div>
-              <div class="img-cont__item">
-                <img src="img/img2.jpg" alt="Team">
+              <div class="img-cont__item" data-title="Инвесторам">
+                <img src="img/img2.jpg" alt="Team" data-num="1">
               </div>
-              <div class="img-cont__item">
-                <img src="img/img3.jpg" alt="Debtors">
+              <div class="img-cont__item" data-title="Должникам">
+                <img src="img/img3.jpg" alt="Debtors" data-num="2">
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="section values w">
+    <div class="section values white">
       <div class="container">
         <div class="row">
           <div class="title-bg">Ценности</div>
@@ -176,7 +200,7 @@
       </div>
       <a href="" class="b459">Наша Философия</a>
     </div>
-    <div class="section hands w">
+    <div class="section hands white">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -188,43 +212,44 @@
         </div>
       </div>
     </div>
-    <div class="section news w">
+    <div class="section news white">
       <div class="container">
         <div class="row">
-          <div class="news__c1">
+          <div class="title-bg">Новости</div>
+          <div class="news-c1 owl-carousel">
             <div class="news__item">
               <div class="news__img-c">
-                <img src="img/img1.png" alt="Sign">
-                <div class="t-i">
-                  <a href="" class="b114">Прес-релиз</a>
-                  <h5>ООО "М.Б.А. Финансы" получила рекомендации от ООО МФК "МаниМен".</h5>
-                </div>
+                <a href="">
+                  <img src="img/img1.png" alt="Sign">
+                  <div class="t-i">
+                    <span class="b114">Прес-релиз</span>
+                    <h5>ООО "М.Б.А. Финансы" получила рекомендации от ООО МФК "МаниМен".</h5>
+                  </div>
+                </a>
               </div>
               <div class="t-b">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
                 <time>17.06.2018</time>
               </div>
             </div>
-          </div>
-          <div class="news__c2">
             <div class="news__item">
               <div class="news__img-c">
-                <img src="img/img2.png" alt="Sign">
+                <a href=""><img src="img/img2.png" alt="Sign"></a>
               </div>
               <div class="t-b">
-                <a href="" class="b114">Прес-релиз</a>
-                <h5>ООО "М.Б.А. Финансы" получила рекомендации от ООО МФК "МаниМен".</h5>
+                <span class="b114">Прес-релиз</span>
+                <a href=""><h5>ООО "М.Б.А. Финансы" получила рекомендации от ООО МФК "МаниМен".</h5></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
                 <time>17.06.2018</time>
               </div>
             </div>
             <div class="news__item">
               <div class="news__img-c">
-                <img src="img/img3.png" alt="Sign">
+                <a href=""><img src="img/img3.png" alt="Sign"></a>
               </div>
               <div class="t-b">
-                <a href="" class="b114">Прес-релиз</a>
-                <h5>ООО "М.Б.А. Финансы" получила рекомендации от ООО МФК "МаниМен".</h5>
+                <span class="b114">Прес-релиз</span>
+                <a href=""><h5>ООО "М.Б.А. Финансы" получила рекомендации от ООО МФК "МаниМен".</h5></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
                 <time>17.06.2018</time>
               </div>
@@ -232,8 +257,9 @@
           </div>
         </div>
       </div>
+      <a href="" class="b459">Все новости</a>
     </div>
-    <div class="section geo w">
+    <div class="section geo white">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -247,8 +273,124 @@
       </div>
       <a href="" class="b459">Смотреть все страны</a>
     </div>
+    <div class="section footer">
+      <section class="b-head-office b-head-office_main white">
+        <div class="container">
+          <h2>HEAD OFFICE</h2>
+          <div class="row">
+            <div class="b-l">
+              <div class="b-l__i">
+                <div class="t-b">
+                  <p>39 ROBINSON ROAD<br>#11-01 ROBINSON POINT<br>SINGAPORE<br>068911</p>
+                  <a class="email" href="mailto:singapore@mbaempire.com">singapore@mbaempire.com</a>
+                  <a class="phone" href="tel:65-6750-4636">+65 6750 4636</a>
+                  <a class="phone" href="tel:65-8342-7288">+65 8342 7288</a>
+                </div>
+              </div>
+              <div class="b-l__i">
+                <div class="t-b">
+                  <p>4 Thomas More Square<br>Quadrant House<br>London, UK<br>E1W 1YW</p>
+                  <a class="email" href="mailto:london@mbaempire.com">london@mbaempire.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="b-footer b-footer_main white">
+        <div class="container container1285">
+          <div class="row">
+            <div class="b-l">
+                <div class="b-l__i">
+                  <ul class="b-footer__list">
+                    <li><a href="">Who we are</a></li>
+                    <li><a href="">What we do</a></li>
+                    <li><a href="">Our story</a></li>
+                    <li><a href="">Our thinking</a></li>
+                    <li><a href="">Our team</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Our world</a></li>
+                    <li><a href="">Events</a></li>
+                  </ul>
+                </div>
+                <div class="b-l__i">
+                  <ul class="b-footer__list">
+                    <li><a href="">Clients</a></li>
+                    <li><a href="">Our clients</a></li>
+                    <li><a href="">Opportunities</a></li>
+                    <li><a href="">Our team</a></li>
+                    <li><a href="">How we work</a></li>
+                    <li><a href="">Advantages</a></li>
+                    <li><a href="">Code of conduct</a></li>
+                    <li><a href="">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class="b-l__i">
+                  <ul class="b-footer__list">
+                    <li><a href="">Investors</a></li>
+                    <li><a href="">Our clients</a></li>
+                    <li><a href="">Opportunities</a></li>
+                    <li><a href="">Our team</a></li>
+                    <li><a href="">How we work</a></li>
+                    <li><a href="">Advantages</a></li>
+                    <li><a href="">Code of conduct</a></li>
+                    <li><a href="">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class="b-l__i">
+                  <ul class="b-footer__list">
+                    <li><a href="">Debtors</a></li>
+                    <li><a href="">Opportunities</a></li>
+                    <li><a href="">Code of conduct</a></li>
+                    <li><a href="">Ликбез</a></li>
+                    <li><a href="">3-rd Parties related</a></li>
+                    <li><a href="">Portal MBA</a></li>
+                    <li><a href="">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class="b-l__i">
+                  <ul class="b-footer__list">
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Opportunities</a></li>
+                    <li><a href="">Code of condact</a></li>
+                    <li><a href="">ликбез</a></li>
+                    <li><a href="">3-rd Parties related</a></li>
+                  </ul>
+                </div>
+                <div class="b-l__i">
+                  <ul class="b-footer__list">
+                    <li><a href="">Mass Media</a></li>
+                    <li><a href="">Новости</a></li>
+                    <li><a href="">События</a></li>
+                    <li><a href="">Спикеры</a></li>
+                    <li><a href="">Как мы работаем</a></li>
+                    <li><a href="">Ютуб</a></li>
+                    <li><a href="">Медиа-кит</a></li>
+                    <li><a href="">Медиа-запрос</a></li>
+                  </ul>
+                </div>
+                <div class="b-l__i">
+                  <ul class="b-footer__list b-footer__list_last">
+                    <li><a href="">News</a></li>
+                    <li><a href="">Discover</a></li>
+                    <li><a href="">Our World</a></li>
+                    <li><a href="">Join us</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="b-l">
+              <div class="b-l__i">
+                <span>© Copyright 2018 MBA Consult. All rights reserved.</span>
+              </div>
+              <div class="b-l__i">
+                <span>created by <a href="https://osom.com.ua/">Osom agency</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
-
 	<script src="js/libs.min.js"></script>
 </body>
 </html>

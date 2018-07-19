@@ -1,0 +1,241 @@
+@media screen and (max-width: 1140px)
+	.t-l
+		&__i
+			flex: 0 0 100%
+
+@media screen and (max-width: 1024px)
+	.b-principles
+		.b-l
+			&__i
+				&:after
+					display: none !important
+	.b-footer
+		&__list
+			li:first-child
+				margin-bottom: 20px
+				a
+					font-size: 12px
+			li:not(:last-child)
+			a
+				font-size: 10px
+
+@media screen and (max-width: 992px)
+	.b-choose-us
+		.b-l
+			&__i
+				flex: 0 0 50%
+
+	.b-clients-img
+		.b-l
+			&__i
+				flex: 0 1 25%
+
+@media screen and (max-width: 960px)
+	.b-principles
+		h5
+			font-size: 19px
+		.b-l
+			&__i
+				flex: 0 1 50%
+				&:not(:last-child)
+					margin-bottom: 25px
+				.t-b
+					max-width: none
+					padding-right: 30px
+
+	.b-p
+		margin-bottom: 150px
+		li
+			flex: 0 0 100%
+			&:not(:last-child):after
+				display: none
+			&:not(:last-child)
+				margin-bottom: 25px
+		div
+			width: 100%
+		h4
+			height: auto
+			margin-bottom: 15px
+
+	.b-d
+		&__i
+			flex: 0 0 100%
+		p
+			max-width: none
+
+@media screen and (max-width: 767px)
+	h1
+		font-size: 48px
+		line-height: 48px
+	h2
+		font-size: 36px
+		line-height: 36px
+
+	.b-clients-img
+		.b-l
+			&__i
+				flex: 0 1 33%
+
+	.b-choose-us
+		.b-l
+			&__i
+				flex: 0 0 100%
+		.t-b
+			max-width: none
+
+	.b-interaction
+		.info-b
+			flex-flow: row wrap
+			&__c1
+				flex: 0 0 100%
+			&__c2
+				flex: 0 1 353px
+				margin-bottom: 20px
+			&:nth-of-type(2n+1)
+				.info-b__c2
+					order: -1
+
+	.b-t-a
+		&__i
+			&:first-child, &:nth-child(2)
+				flex: 0 0 100%
+			&:first-child
+				margin-bottom: 50px
+
+	.b-l-c
+		&__i
+			padding-left: 0
+			&:before
+				top: -40px
+			&:after
+				display: none
+
+	.b-principles
+		.b-l
+			&__i
+				flex: 0 0 100%
+			.t-b
+				padding: 0
+
+	.tabs
+		flex-flow: row wrap
+		&__l, &__i
+			flex: 0 1 100%
+		&__l
+			display: flex
+			flex-flow: row nowrap
+			overflow-x: scroll
+			margin-bottom: 20px
+		li
+			&:not(:last-child)
+				margin: 0 15px 10px 0 !important
+		a.active
+			font-size: 16px
+			&:after
+				display: none
+
+	.b-footer
+		.b-l
+			flex-flow: row wrap
+			&:first-child
+				justify-content: flex-start
+				.b-l__i
+					flex: 0 0 25%
+					&:not(:last-child)
+						margin-bottom: 25px
+
+
+@media screen and (max-width: 599px)
+	.b-clients, .b-interaction, .b-choose-us, .b-principles, .b-head-office
+		padding: 80px 0
+	h1
+		font-size: 48px
+		line-height: 48px
+	h2
+		font-size: 26px
+		line-height: 26px
+	h3
+		font-size: 20px
+		line-height: 20px
+
+	.b-clients
+		h1
+			margin-bottom: 50px
+		p
+			font: 15px/30px Montserrat
+
+	.b-interaction
+		h2
+			margin-bottom: 30px
+		.info-b
+			&:not(:last-child)
+				margin-bottom: 50px
+		.t-b
+			margin-bottom: 30px
+			p
+				font-size: 14px
+				line-height: 25px
+
+	.b-choose-us
+		.row
+			& > h2
+				margin-bottom: 30px
+		.b-l
+			h2
+				font-size: 36px
+				line-height: 36px
+
+	.b-clients-img
+		.b-l
+			&__i
+				flex: 0 0 50%
+
+	.tabs
+		&__i
+			&-item
+				flex: 0 1 50%
+
+	.b-principles
+		h2
+			margin-bottom: 30px
+		h5
+			font-size: 18px
+			margin-bottom: 25px
+
+	.b-head-office
+		.b-l
+			&__i
+				&:first-child
+					margin-bottom: 50px
+
+	.b-footer
+		.b-l
+			&:first-child
+				.b-l__i
+					flex: 0 0 33%
+					&:not(:last-child)
+						margin-bottom: 25px
+
+@media screen and (max-width: 480px)
+	.b-clients, .b-interaction, .b-choose-us, .b-principles, .b-head-office
+		padding: 50px 0
+
+	.b-our-team
+		&2
+			.t-l
+				&__i
+					flex-shrink: 1
+
+	.b-footer
+		.b-l
+			&:first-child
+				.b-l__i
+					flex: 0 0 50%
+					&:not(:last-child)
+						margin-bottom: 25px
+
+@media screen and (max-width: 400px)
+	.b-clients-img
+		.b-l
+			&__i
+				flex: 0 0 100%
