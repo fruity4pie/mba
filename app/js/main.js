@@ -48,52 +48,74 @@ $(document).ready(function() {
     })
   })
 
-
   //Gallery
-  $(document).ready(function(){
-    $('.g-c').owlCarousel({
-      loop: true,
-      responsive: {
-        0: {
-          items: 1,
-          center: true,
-          margin: 0,
-          autoplay: true,
-          autoplayTimeout: 1500
-        },
-        550: {
-          margin: 75,
-          items: 2,
-          center: false,
-          nav: false
-        },
-        768: {
-          margin: 50,
-          items: 3,
-          nav: true,
-        },
-        1100: {
-          margin: 190
-        }
+  $('.g-c').owlCarousel({
+    loop: true,
+    responsive: {
+      0: {
+        items: 1,
+        center: true,
+        margin: 0,
+        autoplay: true,
+        autoplayTimeout: 1500
+      },
+      550: {
+        margin: 75,
+        items: 2,
+        center: false,
+        nav: false
+      },
+      768: {
+        margin: 50,
+        items: 3,
+        nav: true,
+      },
+      1100: {
+        margin: 190
       }
-    });
+    }
   });
 
-  $(document).ready(function(){
-    $('.news-c1').owlCarousel({
-      items: 3,
-      autoWidth: true,
-      margin: 20,
-    });
-  });
+  // $('.news-c1').owlCarousel({
+  //   items: 3,
+  //   autoWidth: true,
+  //   margin: 20,
+  // });
+
+  let visibleLang = $('.lang__visible a');
+  let hiddenLang = $('.lang__hidden');
+  visibleLang.on('click', function(e) {
+    e.preventDefault();
+    hiddenLang.toggleClass('active');
+  })
+
+  //MobileMenu
+
+  let mobBtn = $('.m-menu');
+  let mobHmen = $('.m-menu-h');
+  let mobListAnch = $('.m-menu-list li > a');
+  let mobClose = $('.m-menu-header span');
+
+  mobBtn.on('click', function(){
+    mobHmen.toggleClass('active');
+  })
+
+  mobListAnch.on('click', function(e){
+    e.preventDefault();
+    mobListAnch.removeClass('active').next().removeClass('active');
+    $(this).addClass('active').next().toggleClass('active');
+  })
+
+  mobClose.on('click', function() {
+    mobHmen.removeClass('active');
+  })
 
 });
 
 
 
-var ctx = document.getElementById("chart1").getContext("2d");
-
-var myLineChart = new Chart(ctx, {
+let ctx = document.getElementById("chart1").getContext("2d");
+let myLineChart = new Chart(ctx, {
   type: 'line',
   data: [10, 13, 40, 10],
   options: options

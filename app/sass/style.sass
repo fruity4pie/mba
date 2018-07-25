@@ -293,7 +293,7 @@ strong
 	&-c1
 		display: flex
 		flex-flow: row nowrap
-		justify-content: space-around
+		justify-content: space-between
 		position: relative
 		a
 			color: #fff
@@ -302,6 +302,10 @@ strong
 				padding: 25px 45px 0 30px
 				p
 					margin-bottom: 30px
+	&__item
+		flex: 0 1 23.1%
+		&:nth-child(1)
+			flex: 0 1 48.7%
 	.owl-stage
 		display: flex
 		flex-flow: row nowrap
@@ -1292,6 +1296,7 @@ strong
 .b-work
 	background: url('../img/workbg.png') no-repeat center #000
 	padding: 75px 0 105px
+	overflow: hidden
 	.row
 		flex-flow: column nowrap
 	h2
@@ -1434,6 +1439,7 @@ strong
 			border: 2px solid #ffffff
 			color: #fff
 			width: 223px
+			height: 53px
 			display: flex
 			flex-flow: row nowrap
 			justify-content: center
@@ -1637,7 +1643,7 @@ strong
 				background-image: linear-gradient(to right, #4b0096 0%, #64c8ff 100%)
 	&-m
 		position: relative
-		height: 616px
+		max-height: 616px
 		margin-bottom: 40px
 		img
 			width: 100%
@@ -1957,7 +1963,8 @@ strong
 		flex: 0 0 50%
 		position: relative
 		z-index: 1
-		margin-bottom: 80px
+		&:not(:last-child)
+			margin-bottom: 80px
 		&:before
 			counter-increment: counter
 			content: "0"counter(counter)
@@ -2040,7 +2047,7 @@ strong
 	flex-flow: row wrap
 	justify-content: space-between
 	&__i
-		flex: 0 0 557px
+		flex: 0 1 557px
 	&__img-wrap
 		position: relative
 		&:after
@@ -2055,6 +2062,7 @@ strong
 			bottom: 3px
 			left: 66px
 		img
+			width: 100%
 			height: 100%
 	&__t-wrap
 		padding: 40px 35px 45px 66px
@@ -2268,6 +2276,8 @@ strong
 		padding: 0 15px
 	&__row
 		display: flex
+		position: relative
+		align-items: flex-start
 	&__logo
 		img
 			width: 100%
@@ -2346,9 +2356,132 @@ strong
 						font: 400 13px Montserrat
 						text-transform: uppercase
 						letter-spacing: 0.65px
+	.lang
+		display: flex
+		flex-flow: column
+		align-items: center
+		position: relative
+		padding-top: 20px
+		&__visible
+			width: 45px
+			height: 45px
+			border: 2px solid #ffffff
+			border-radius: 50%
+			text-align: center
+			display: flex
+			flex-flow: row nowrap
+			justify-content: center
+			align-items: center
+			cursor: pointer
+		&__hidden
+			display: none
+			position: absolute
+			left: 50%
+			top: 85px
+			transform: translate(-50%, 0)
+			&.active
+				display: flex
+				flex-flow: column nowrap
+			a
+				&:not(:last-child)
+					margin-bottom: 20px
+		a
+			color: #fff
+	.m-menu
+		display: none
+		flex-flow: row nowrap
+		color: #fff
+		cursor: pointer
+		margin-left: auto
+		margin-right: 25px
+		align-items: center
+		& > span
+			display: inline-block
+			position: relative
+			&:not(:last-child)
+				margin-right: 15px
+			&:last-of-type
+				height: 2px
+				width: 38px
+				background: #fff
+				&:before, &:after
+					content: ''
+					position: absolute
+					display: block
+					height: 2px
+					width: 38px
+					background: #fff
+				&:before
+					top: -10px
+				&:after
+					bottom: -10px
 	&_b
 		a, .nav__i a
 			color: #000
+		.lang
+			&__visible
+				border-color: #000
+				a
+					display: block
+					width: 100%
+					height: 100%
+			a
+				color: #000
+		.m-menu
+			color: #000
+			span
+				&:last-child
+					background: #000
+					&:before, &:after
+						background: #000
+
+.m-menu
+	&-h
+		display: none
+		background: #fff
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 5
+		&.active
+			display: block
+	&-header
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: center
+		padding: 15px 141px 0 25px
+		color: #000
+	&-list
+		position: relative
+		padding: 50px 0 0 60px
+		& > li > a
+			font: 700 30px/60px Montserrat
+			text-transform: uppercase
+			color: #000
+			letter-spacing: 2.99px
+			&.active
+				color: #4b0196
+	&-s-list
+		display: none
+		padding: 45px 0 0 60px
+		background: #f8f8f8
+		position: absolute
+		height: 150vw
+		width: 100vw
+		top: 20px
+		left: 335px
+		&.active
+			display: block
+		a
+			color: #4b0196
+			font: 400 13px/36px Montserrat
+			text-transform: uppercase
+			letter-spacing: 0.65px
+
+
 
 
 @import "media"
