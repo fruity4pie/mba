@@ -1,12 +1,12 @@
 @import "libs"
 
-
-
 *
 	box-sizing: border-box
 
 body
 	font: 400 16px Montserrat
+	&.active
+		overflow: hidden !important
 
 a
 	text-decoration: none
@@ -159,17 +159,18 @@ strong
 			margin-bottom: 90px
 	.row
 		flex-flow: row nowrap
-		align-items: center
+		align-items: stretch
 	.col1
 		flex: 0 0 390px
 		margin-right: 77px
 	.col2
 		flex: 0 0 458px
-	.img-cont
 		position: relative
-		height: 525px
+	.img-cont
 		&__item
 			position: absolute
+			top: 50%
+			transform: translate(0, -50%)
 			&:after
 				content: attr(data-title)
 				color: #ffffff
@@ -194,7 +195,6 @@ strong
 					display: none
 			&:nth-child(2)
 				z-index: 2
-				top: 40px
 				left: 210px
 				width: 395px
 				height: 451px
@@ -202,7 +202,6 @@ strong
 				z-index: 1
 				height: 376px
 				width: 328px
-				top: 77px
 				left: 396px
 				&:after
 					font: 700 12px Montserrat
@@ -318,9 +317,13 @@ strong
 					padding: 30px 45px 0 30px
 	&__img-c
 		position: relative
+		&:hover img
+			filter: grayscale(0)
 		img
 			width: 100%
 			height: 100%
+			filter: grayscale(100%)
+			transition: all .3s
 		.t-i
 			padding: 0 35px 0 30px
 			bottom: 35px
@@ -331,6 +334,10 @@ strong
 				letter-spacing: 0.38px
 			a
 				margin-bottom: 10px
+	&_inner
+		padding: 90px 0 165px
+		h3
+			margin-bottom: 60px
 
 .geo
 	background: url('../img/geo.png') no-repeat center #000
@@ -348,7 +355,7 @@ strong
 		letter-spacing: -.1px
 
 .footer
-	background: #000
+	background: #000113
 
 //Inner Pages
 
@@ -360,16 +367,13 @@ strong
 		flex-flow: column nowrap
 	.t-b
 		margin-bottom: 70px
+		width: 95%
 	h1
-		margin-bottom: 100px
+		margin-bottom: 50px
 	p
-		font: 30 24px/48px Montserrat
+		font: 400 20px/30px Montserrat
 	&_inv
-		background: url('../img/clientsinvbg.png') no-repeat center
-		h1
-			margin-bottom: 50px
-		p
-			font: 400 40px/48px Montserrat
+		background: url('../img/clientsinvbg.png') no-repeat 50% 0
 	&_deb
 		background: url('../img/debtorsbg.png') no-repeat center bottom #000214
 		padding: 172px 0 235px
@@ -389,45 +393,54 @@ strong
 			a:first-child
 				margin-right: 27px
 	&_wwe
-		background: url('../img/wwebg.png') no-repeat center bottom #000
+		background: url('../img/wwebg.png') no-repeat center bottom #070d1c
+		height: 100vh
 		h3
 			margin-bottom: 35px
 		p
-			max-width: 426px
+			max-width: 465px
 		.t-b
 			margin-bottom: 140px
 	&_con
 		padding: 172px 0 70px
-		background: url('../img/contactsbg.png') no-repeat right 0 #000
+		background: url('../img/contactsbg.png') no-repeat right 0 #070d1c
+		.country
+			font-weight: bold
+			text-transform: uppercase
 		h1
 			margin-bottom: 30px
 		h3
 			margin-bottom: 20px
+		.form-tabs
+			margin-bottom: 50px
 		.b-l
 			max-width: 615px
 			width: 100%
 			display: flex
 			flex-flow: row wrap
 			justify-content: space-between
-			margin-bottom: 85px
+			&__i
+				width: 50%
+				&:not(:last-child)
+					margin-bottom: 55px
 		.t-b
 			display: flex
 			flex-flow: column nowrap
 			margin-bottom: 0
+			width: 95%
 			p
 				font: 400 15px/30px Montserrat
 				text-transform: uppercase
 				letter-spacing: 0.75px
-				margin-bottom: 40px
 		.email
 			color: #ffffff
-			font: 700 13px/30px Montserrat
+			font: 400 13px/30px Montserrat
 			text-transform: uppercase
 			letter-spacing: 1.3px
 			margin-bottom: 5px
 		.phone
 			color: #ffffff
-			font: 700 24px/30px Montserrat
+			font: 400 15px/30px Montserrat
 			letter-spacing: 1.3px
 			text-transform: uppercase
 		&_main
@@ -448,6 +461,20 @@ strong
 		p
 			font: 400 14px Montserrat
 			line-height: 30px
+	&_thx
+		padding: 385px 0 250px
+		background: url('../img/thx.png') no-repeat top #000
+		h1
+			text-align: center
+			margin-bottom: 35px
+		p
+			color: #ffffff
+			font: 700 16px/30px Montserrat
+			max-width: 450px
+			margin: 0 auto 100px
+			text-align: center
+		a
+			margin: 0 auto
 
 .b-our-clients
 	background: url('../img/our-clients.png') no-repeat bottom center #fff
@@ -458,6 +485,107 @@ strong
 		margin-bottom: 110px
 	a
 		margin: 0 auto
+	&_rec
+		padding: 172px 0 60px
+		.container
+			max-width: 1333px
+		.tabs
+			justify-content: space-between
+			&__l
+				flex: 0 1 123px
+			&__i
+				flex: 0 1 1071px
+				align-items: stretch
+				justify-content: space-between
+				counter-reset: s
+				&-item
+					flex: 0 1 481px
+				p
+					text-align: left
+					font: 700 18px/30px Montserrat
+					text-transform: uppercase
+					letter-spacing: 0.45px
+					&:first-child
+						position: relative
+						&:before
+							counter-increment: s
+							content: '0'counter(s)
+							background-image: linear-gradient(to left, #7300e8 0%, #64c8ff 100%)
+							-webkit-background-clip: text
+							-webkit-text-fill-color: transparent
+							opacity: 0.5
+							font-family: Montserrat
+							font-size: 48px
+							font-weight: 400
+							line-height: 48px
+							text-transform: uppercase
+							position: absolute
+							left: -70px
+							top: 0
+					&:last-child
+						font: 400 14px/30px Montserrat
+						text-transform: none
+					&:not(:last-child)
+						margin-bottom: 20px
+	&_wwa
+		.tabs
+			justify-content: space-between
+			&__l
+				flex: 0 1 168px
+				overflow-x: auto
+				overflow-y: hidden
+			&__i
+				flex: 0 1 850px
+				display: flex
+				flex-flow: column nowrap
+				&-item
+					&-main
+						position: relative
+						margin-bottom: 65px
+						&:hover img
+							filter: grayscale(0)
+						img
+							width: 100%
+							height: auto
+							filter: grayscale(100%)
+						.t-b
+							color: #fff
+							position: absolute
+							margin: 0
+							left: 60px
+							bottom: 30px
+							.b114
+								margin-bottom: 10px
+							h5
+								font: 700 24px/40px Montserrat
+								text-transform: uppercase
+								letter-spacing: 0.6px
+								max-width: 625px
+								margin-bottom: 10px
+					&-cont
+						display: flex
+						flex-flow: row wrap
+						justify-content: space-between
+						&__item
+							flex: 0 1 262px
+							color: #000
+							margin-bottom: 60px
+							&:hover img
+								filter: grayscale(0)
+							img
+								width: 100%
+								height: auto
+								margin-bottom: 15px
+								filter: grayscale(100%)
+								transition: all .3s
+							span
+								color: inherit
+								margin-bottom: 25px
+							h4
+								font: 700 15px/30px Montserrat
+								text-transform: uppercase
+								letter-spacing: 0.38px
+								margin-bottom: 20px
 
 .b-universal
 	background: url('../img/univbg.png') no-repeat left 220px #fff
@@ -511,6 +639,47 @@ strong
 	&6
 		.t-b
 			margin-bottom: 35px
+	&_7
+		background: #fff
+		padding: 172px 0 90px
+		.t-b
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			max-width: 1140px
+			&__t
+				position: relative
+				&:after
+					content: ''
+					position: absolute
+					width: 1px
+					height: 100%
+					background: #cbcdd0
+					right: -106px
+					top: 0
+			&__b
+				.b223
+					margin-bottom: 20px
+				p
+					color: #1f1f1f
+					font: 700 12px/18px Montserrat
+					letter-spacing: 0.6px
+					max-width: 240px
+					width: 100%
+	&_mm
+		background-image: none
+		background: #fff
+		padding: 90px 0 70px
+		h3
+			margin-bottom: 50px
+		.evn
+			&-a
+				margin-bottom: 0
+			p
+				margin-bottom: 15px
+	&_story
+		overflow: hidden
+		padding: 172px 0 60px
 
 .b-ethics
 	padding: 90px 0 70px
@@ -609,6 +778,10 @@ strong
 		margin-bottom: 30px
 	.row
 		flex-flow: column nowrap
+	&_mm
+		padding-top: 50px
+		h3
+			margin-bottom: 45px
 
 .b-interaction
 	padding: 85px 0 110px
@@ -680,8 +853,7 @@ strong
 					content: counter(section)
 					top: 50%
 					transform: translate(0, -50%)
-					opacity: 0.16
-					font: 700 55px Montserrat
+					font: 700 46px Montserrat
 		.t-b
 			margin-bottom: 0
 	&3
@@ -888,12 +1060,17 @@ strong
 			p
 				font: 700 18px Montserrat
 	.owl-nav
-		position: absolute
-		top: -150px
-		right: 10px
 		font-size: 60px
 		line-height: 18px
 		font-family: Montserrat
+		.owl-prev, .owl-next
+			position: absolute
+			top: 50%
+			transform: translate(0, -50%)
+		.owl-prev
+			left: -5%
+		.owl-next
+			right: calc(130px - 5%)
 		span
 			&:first-child
 				margin-right: 25px
@@ -919,7 +1096,7 @@ strong
 			p
 				font-size: 18px
 		p
-			font: 400 16px Montserrat
+			font: 400 16px/30px Montserrat
 			&:not(:last-child)
 				margin-bottom: 30px
 
@@ -1213,7 +1390,7 @@ strong
 				z-index: -1
 
 .b-head-office
-	background: url('../img/h-o.png') no-repeat center #000
+	background: url('../img/h-o.png') no-repeat center #000113
 	padding: 80px 0 100px
 	h2
 		margin-bottom: 50px
@@ -1226,20 +1403,19 @@ strong
 	.t-b
 		display: flex
 		flex-flow: column nowrap
+		align-items: flex-start
 		p
 			font: 400 15px/30px Montserrat
 			text-transform: uppercase
 			letter-spacing: 0.75px
-			margin-bottom: 40px
 	.email
 		color: #ffffff
-		font: 700 13px/30px Montserrat
+		font: 13px/30px Montserrat
 		text-transform: uppercase
 		letter-spacing: 1.3px
-		margin-bottom: 5px
 	.phone
 		color: #ffffff
-		font: 700 24px/30px Montserrat
+		font: 15px/30px Montserrat
 		letter-spacing: 1.3px
 		text-transform: uppercase
 	&_main
@@ -1273,25 +1449,37 @@ strong
 	padding: 50px 0 100px
 
 .b-consult
-	padding: 90px 0 105px
-	background: url('../img/consultbg.png') no-repeat 0 100px #fff
+	padding: 80px 0 243px
+	background: url('../img/consultbg2.png') no-repeat bottom #fff
 	.row
 		flex-flow: column
 	h2
-		max-width: 245px
-		margin-bottom: 10px
+		margin-bottom: 90px
+		position: relative
+		z-index: 1
+		&:after
+			content: 'MBA CONSULT'
+			color: #f5f6f7
+			font-family: Montserrat
+			font-size: 166px
+			font-weight: 700
+			line-height: 220.66px
+			text-transform: uppercase
+			position: absolute
+			max-width: 815px
+			left: -10px
+			top: 195%
+			z-index: -1
 
 .b-soc
 	background: #fff
 	padding: 110px 0
 
 .b-penalty
-	background: #000
+	background: #070D1C
 	padding: 135px 0 120px
 	.row
 		flex-flow: column nowrap
-	a
-		margin: 0 auto
 
 .b-work
 	background: url('../img/workbg.png') no-repeat center #000
@@ -1309,8 +1497,8 @@ strong
 	.row
 		flex-flow: column nowrap
 	.t-b
-		p:first-of-type
-			margin-bottom: 30px
+		p
+			line-height: 25px
 		p:last-of-type
 			margin-bottom: 110px
 	h2
@@ -1336,7 +1524,7 @@ strong
 
 .b-footer
 	padding: 35px 0 202px
-	background: url('../img/footer.png') no-repeat bottom #000
+	background: url('../img/footer.png') no-repeat bottom #000113
 	border-top: 6px solid #fff
 	border-image: linear-gradient(to right, #4b0096 0%, #64c8ff 100%) 6
 	.row
@@ -1347,7 +1535,7 @@ strong
 		flex-flow: row nowrap
 		justify-content: space-between
 		&:first-child
-			margin-bottom: 90px
+			margin-bottom: 35px
 		&:nth-child(2)
 			color: #ffffff
 			font: 400 13px Montserrat
@@ -1388,7 +1576,7 @@ strong
 				letter-spacing: 1.4px
 	&_main
 		padding: 30px 0 10px
-		background: #000
+		background: #000113
 		.b-l:first-child
 			margin-bottom: 30px
 
@@ -1423,6 +1611,18 @@ strong
 		font: 400 9px/24px Montserrat
 		text-transform: uppercase
 		letter-spacing: 1.8px
+	&170
+		width: 170px
+		height: 38px
+		background-color: #4b0197
+		color: #ffffff
+		font: 400 14px Montserrat
+		letter-spacing: 0.7px
+		display: flex
+		justify-content: center
+		align-items: center
+		&:hover
+			background: #0097dc
 	&223
 		display: flex
 		justify-content: center
@@ -1446,21 +1646,9 @@ strong
 			align-items: center
 			font: 700 12px Montserrat
 			letter-spacing: 1.2px
-	&312
-		display: flex
-		justify-content: center
-		align-items: center
-		max-width: 312px
-		width: 100%
-		height: 53px
-		background-color: #4b0196
-		color: #fff
-		font: 700 12px Montserrat
-		text-transform: uppercase
-		letter-spacing: 1.2px
 	&267
-		width: 267px;
-		height: 52px;
+		width: 267px
+		height: 52px
 		border: 2px solid #ffffff
 		border-image: linear-gradient(to left, #04c3f6 0%, #006eff 100%) 2
 		color: #fff
@@ -1481,6 +1669,20 @@ strong
 			position: absolute
 			left: 35px
 			opacity: .3
+	&293
+		width: 293px
+	&312
+		display: flex
+		justify-content: center
+		align-items: center
+		max-width: 312px
+		width: 100%
+		height: 53px
+		background-color: #4b0196
+		color: #fff
+		font: 700 12px Montserrat
+		text-transform: uppercase
+		letter-spacing: 1.2px
 	&459
 		width: 459px
 		height: 82px
@@ -1496,6 +1698,35 @@ strong
 		position: absolute
 		left: 0
 		bottom: 0
+	&_world
+		display: block
+		width: 250px
+		height: 42px
+		display: flex
+		flex-flow: row nowrap
+		justify-content: center
+		align-items: center
+		border: 2px solid #ffffff
+		border-image: linear-gradient(to left, #04c3f6 0%, #006eff 100%) 2
+		color: #fff
+		text-transform: uppercase
+		transition: all .3s
+		padding-left: 45px
+		font-weight: 500
+		position: relative
+		letter-spacing: 1px !important
+		&:hover
+			background: linear-gradient(to right, rgba(0,110,255,1) 0%,rgba(4,195,246,1) 100%)
+			color: #fff !important
+		img
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 18px
+
+
+.link-w
+	margin-top: 45px
 
 .b-c
 	display: flex
@@ -1531,7 +1762,6 @@ strong
 		align-items: center
 		&-item
 			flex: 1 0 25%
-			margin-bottom: 70px
 		.i-w
 			height: 87px
 			margin-bottom: 30px
@@ -1570,7 +1800,6 @@ strong
 		&:after
 			content: ''
 			position: absolute
-			height: 5px
 			display: block
 			max-width: 528px
 			width: 100%
@@ -1589,15 +1818,19 @@ strong
 		position: absolute
 		bottom: 0px
 		right: -80px
+		filter: grayscale(100%)
+		transition: all .3s
+		&:hover
+			filter: grayscale(0)
 	h6
 		margin-bottom: 5px
+		max-width: 258px
 	p
+		max-width: 258px
 		font: 400 12px/24px Montserrat
 		&:first-of-type
 			font-size: 14px
 			margin-bottom: 13px
-		&:last-child
-			max-width: 258px
 
 .evn
 	position: relative
@@ -1678,6 +1911,9 @@ strong
 				margin-bottom: 7px
 			h5
 				margin-bottom: 20px
+			iframe
+				width: 100%
+				height: 220px
 
 .o-evn
 	display: flex
@@ -1762,6 +1998,7 @@ strong
 	&__i
 		flex: 0 0 33%
 		p
+			min-height: 114px
 			max-width: 260px
 		&:nth-child(2n+2)
 			p
@@ -1777,6 +2014,7 @@ strong
 		letter-spacing: normal
 		margin-bottom: 80px
 		position: relative
+		min-height: 72px
 		&:after
 			content: ''
 			display: block
@@ -1858,61 +2096,6 @@ strong
 			text-transform: uppercase
 			letter-spacing: 0.5px
 
-.b-y
-	display: flex
-	flex-flow: column nowrap
-	margin-bottom: 160px
-	&__i
-		position: relative
-		z-index: 1
-		&:nth-child(4n+1)
-			align-self: flex-end
-			margin-bottom: 20px
-			&:before
-				content: attr(data-text)
-				color: #bcc3eb
-				font-family: Montserrat
-				font-size: 100px
-				font-weight: 700
-				line-height: 55px
-				position: absolute
-				left: -55px
-				top: -40px
-				z-index: -1
-		&:nth-child(5n+2)
-			align-self: flex-start
-			margin-bottom: 120px
-			&:before
-				content: attr(data-text)
-				color: #bcc3eb
-				font-family: Montserrat
-				font-size: 100px
-				font-weight: 700
-				line-height: 55px
-				position: absolute
-				left: -55px
-				top: -40px
-				z-index: -1
-		&:nth-child(6n+3)
-			align-self: center
-			&:before
-				content: attr(data-text)
-				color: #bcc3eb
-				font-family: Montserrat
-				font-size: 100px
-				font-weight: 700
-				line-height: 55px
-				position: absolute
-				left: -55px
-				top: -40px
-				z-index: -1
-		p
-			max-width: 455px
-			&:nth-child(1)
-				margin-bottom: 30px
-			&:nth-child(2)
-				margin-bottom: 10px
-
 .b-tabs
 	max-width: 755px
 	align-self: flex-end
@@ -1926,11 +2109,26 @@ strong
 			font: 700 13px Montserrat
 			text-transform: uppercase
 			letter-spacing: 1.32px
+			display: block
+			position: relative
+			&:before
+				content: ''
+				display: block
+				width: 0
+				height: 2px
+				background: #fff
+				position: absolute
+				bottom: -5px
+				transition: all .5s
+			&.active
+				&:before
+					width: 100%
 	&__cont
 		div
 			display: none
 			position: relative
 			z-index: 1
+			min-height: 320px
 			&:before
 				content: attr(data-subtitle)
 				color: #03bef1
@@ -2013,34 +2211,79 @@ strong
 	display: flex
 	flex-flow: row wrap
 	justify-content: space-between
-	margin-bottom: 75px
-	&__header
-		width: 265px
-		h3
-			letter-spacing: 1px
-			line-height: 40px
+	position: relative
+	z-index: 2
+	&:not(:last-child)
+		margin-bottom: 115px
 	&__t
+		h4
+			color: #000000
+			font: 700 32px/30px Montserrat
+			text-transform: none
 		p
-			font: 400 12px Montserrat
-			&:first-child
-				font: 700 48px Montserrat
-				letter-spacing: 1.2px
-				text-transform: uppercase
+			color: #1f1f1f
+			font: 400 17px/30px Montserrat
+			max-width: 270px
+	&_c
+		h4
+			font-size: 25px
+		p
+			font-size: 17px
 
 .b-pres
 	display: flex
 	flex-flow: row wrap
-	justify-content: space-between
+	justify-content: flex-start
+	margin-bottom: 100px
+	z-index: 2
+	position: relative
+	align-items: center
 	&__t
+		&:not(:last-child)
+			margin-right: 75px
+		h5
+			color: #1f1f1f
+			font: 600 17px/30px Montserrat
+			text-transform: none
+			margin-bottom: 15px
+		p
+			color: #420a90
+			font: 700 48px/30px Montserrat
+	&__btn
+		margin-left: auto
+
+.b-corp
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	margin-bottom: 80px
+	&__h
+		h3
+			max-width: 270px
+	&__i
+		p
+			font: 400 12px Montserrat
+			color: #1f1f1f
+			&:first-of-type
+				font: 700 48px Montserrat
+				letter-spacing: 1.2px
+				margin-bottom: 10px
+	div
+		flex: 0 1 25%
+
+.b-est
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-between
+	&__i
 		p
 			color: #4b0196
 			font: 700 24px Montserrat
-			&:first-child
+			&:first-of-type
+				color: #1f1f1f
 				font: 400 16px Montserrat
-				color: #000
-
-.form-tabs
-	background: #fff
+	div
+		flex: 0 1 25%
 
 .b-resp
 	display: flex
@@ -2067,7 +2310,7 @@ strong
 	&__t-wrap
 		padding: 40px 35px 45px 66px
 		background-color: rgba(180, 180, 180, 0.1)
-		height: 480px
+		min-height: 480px
 		display: flex
 		flex-flow: column nowrap
 	h3
@@ -2164,7 +2407,7 @@ strong
 		&__item
 			max-width: 192px
 			p
-				font-weight: 700
+				font-weight: normal
 				position: relative
 				&:before
 					content: ''
@@ -2191,36 +2434,49 @@ strong
 			margin-bottom: 35px
 
 .form-tabs
-	padding: 40px 85px 60px 70px
+	padding: 40px 85px 40px 70px
+	background: #fff
 	&__list
 		display: flex
-		flex-flow: row wrap
+		flex-flow: row nowrap
 		justify-content: space-between
+		overflow-x: auto
+		overflow-y: hidden
 		margin-bottom: 70px
+		li
+			flex: 0 0 auto
 		a
 			font: 700 12px Montserrat
 			text-transform: uppercase
 			letter-spacing: 1.2px
 			color: #000
-		li
-			position: relative
-			&:after
-				content: ""
-				display: block
-				position: absolute
-				width: 100%
-				height: 3px
-				background-color: #64c8ff
-				background-image: linear-gradient(to right, #4b0096 0%, #64c8ff 100%)
-				bottom: -10px
+			&.active
+				position: relative
+				&:after
+					content: ""
+					display: block
+					position: absolute
+					width: 100%
+					height: 3px
+					background-color: #64c8ff
+					background-image: linear-gradient(to right, #4b0096 0%, #64c8ff 100%)
+					bottom: -10px
 	&__forms
 		h4
 			margin-bottom: 25px
 		.form-tabs__wrap
 			display: flex
 			flex-flow: row wrap
-			justify-content: space-between
+			justify-content: flex-start
 			align-items: flex-start
+			&:last-child
+				display: flex
+				flex-flow: column nowrap
+				& > div
+					&:first-child
+						margin-bottom: 25px
+			.b312
+				margin-bottom: 0
 			input
 				max-width: 312px
 				width: 100%
@@ -2235,7 +2491,6 @@ strong
 					opacity: .5
 					color: #000
 					font: 400 13px Montserrat
-					line-height: 48px
 				&:focus
 					outline: none
 				&:focus::placeholder
@@ -2244,8 +2499,10 @@ strong
 					font-size: 10px
 				&[type="checkbox"]
 					display: none
-					&:checked
+					&:checked + .lb:after
 						display: block
+				&:not(:last-child)
+					margin-right: 15px
 			textarea
 				max-width: 652px
 				width: 100%
@@ -2253,6 +2510,8 @@ strong
 				border: none
 				border-bottom: 1px solid #000
 				height: 33px
+				margin-bottom: 40px
+				resize: vertical
 				&:focus
 					outline: none
 			.lb
@@ -2260,6 +2519,24 @@ strong
 				width: 20px
 				height: 20px
 				border: 1px solid #000
+				position: relative
+				cursor: pointer
+				&:after
+					content: '\2714'
+					position: absolute
+					color: #000
+					font-size: 20px
+					top: -6px
+					left: 50%
+					transform: translate(-50%,0)
+					display: none
+			.b312
+				margin-left: auto
+				cursor: pointer
+	&__elem
+		display: none
+		&.active
+			display: block
 
 .header
 	position: fixed
@@ -2268,10 +2545,15 @@ strong
 	transform: translate(-50%, 0)
 	max-width: 1830px
 	width: 100%
-	z-index: 1
+	z-index: 2
 	padding-top: 20px
 	&_a
 		position: absolute
+	&_b
+		svg
+			border-radius: 50%
+			.st50
+				fill: #000
 	&__container
 		padding: 0 15px
 	&__row
@@ -2279,9 +2561,13 @@ strong
 		position: relative
 		align-items: flex-start
 	&__logo
-		img
+		max-width: 150px
+		img, svg
 			width: 100%
-			height: 100%
+			height: auto
+		svg
+			border-radius: 50%
+
 	.nav
 		padding-top: 30px
 		margin-left: auto
@@ -2335,11 +2621,11 @@ strong
 					overflow: hidden
 					opacity: 0
 					position: absolute
-					width: 164px
+					width: 168px
 					height: 0
 					background-color: #420387
 					top: 33px
-					padding: 20px 0 25px 20px
+					padding: 20px 20px 25px 20px
 					display: flex
 					flex-flow: column nowrap
 					justify-content: space-between
@@ -2356,6 +2642,7 @@ strong
 						font: 400 13px Montserrat
 						text-transform: uppercase
 						letter-spacing: 0.65px
+						word-break: break-word
 	.lang
 		display: flex
 		flex-flow: column
@@ -2368,11 +2655,14 @@ strong
 			border: 2px solid #ffffff
 			border-radius: 50%
 			text-align: center
-			display: flex
-			flex-flow: row nowrap
-			justify-content: center
-			align-items: center
 			cursor: pointer
+			a
+				display: flex
+				flex-flow: row nowrap
+				justify-content: center
+				align-items: center
+				width: 100%
+				height: 100%
 		&__hidden
 			display: none
 			position: absolute
@@ -2421,10 +2711,6 @@ strong
 		.lang
 			&__visible
 				border-color: #000
-				a
-					display: block
-					width: 100%
-					height: 100%
 			a
 				color: #000
 		.m-menu
@@ -2447,6 +2733,8 @@ strong
 		z-index: 5
 		&.active
 			display: block
+			overflow-x: hidden
+			overflow-y: auto
 	&-header
 		display: flex
 		flex-flow: row nowrap
@@ -2454,6 +2742,8 @@ strong
 		align-items: center
 		padding: 15px 141px 0 25px
 		color: #000
+		span
+			cursor: pointer
 	&-list
 		position: relative
 		padding: 50px 0 0 60px
@@ -2481,7 +2771,407 @@ strong
 			text-transform: uppercase
 			letter-spacing: 0.65px
 
+.pagination-mba
+	width: 100%
+	margin: 0 auto
+	display: flex
+	flex-flow: row nowrap
+	justify-content: center
+	align-items: center
+	& > *
+		color: #000000
+		font: 700 16px/24px Montserrat
+		text-transform: uppercase
+		letter-spacing: 1.6px
+		&:not(:last-child)
+			margin-right: 50px
+	.current
+		border: 2px solid black
+		border-radius: 50%
+		height: 45px
+		width: 45px
+		display: flex
+		flex-flow: row nowrap
+		justify-content: center
+		align-items: center
 
+.filter-b-w
+	filter: grayscale(100%)
+	transition: all .3s
+	&:hover
+		filter: grayscale(0)
+
+.stories
+	margin: 0 auto
+	position: relative
+	&:before, &:after
+		content: ""
+		display: block
+		position: absolute
+		background-color: #4b0297
+		height: 1px
+	&:before
+		width: 166px
+		bottom: 45px
+		left: -150px
+	&:after
+		width: 100%
+		bottom: 45px
+		right: -100%
+	.owl-stage-outer
+		padding: 0 20px 45px
+	&__i
+		padding: 0 25px 20px
+		position: relative
+		border-bottom: 1px solid #4b0297
+		display: flex
+		flex-flow: row wrap
+		&:before
+			content: ""
+			width: 1px
+			height: 100%
+			background-color: #e8e8e8
+			position: absolute
+			display: block
+			left: 0
+			bottom: 0
+		&:after
+			content: ""
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			background-color: #4b0297
+			display: block
+			position: absolute
+			left: -5px
+			bottom: -5px
+			box-shadow: 0 0 0px 10px rgba(100, 211, 251, 0.4)
+	&__i-w
+		width: 132px
+		height: 169px
+	h4, h5
+		color: #4b0297
+		text-transform: uppercase
+		font-family: Montserrat
+	h4
+		font-size: 16px
+		font-weight: 700
+	h5
+		font-size: 14px
+		font-weight: 300
+		margin-bottom: 15px
+	p
+		max-width: 275px
+		word-wrap: break-word
+		color: #1f1f1f
+		font-family: Montserrat
+		font-size: 14px
+		line-height: 24px
+		max-height: 195px
+		min-height: 195px
+	time
+		position: absolute
+		left: -15px
+		bottom: -40px
+		color: #4b0297
+		font: 500 12px/14px Montserrat
+		text-transform: uppercase
+		letter-spacing: 1.2px
+	img
+		height: 100%
+		width: 100%
+	.owl-prev, .owl-next
+		position: absolute
+		top: 40%
+		fill: #4b0297
+		opacity: 0.5
+		transition: all .3s
+		&:focus
+			outline: none
+	.owl-prev
+		left: -150px
+	.owl-next
+		right: -100px
+	.owl-prev:hover, .owl-next:hover
+		opacity: .12
+
+.b-form
+	padding: 60px 0
+	.row
+		flex-flow: column nowrap
+	h3
+		margin-bottom: 40px
+	.form-tabs
+		&, input:not(.b312), textarea
+			background-color: #f7f7f7
+		form
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+		&
+			&__forms
+				.form-tabs__wrap
+					&:first-of-type
+						display: flex
+						flex-flow: column nowrap
+						flex: 0 1 310px
+					&:nth-of-type(2)
+						flex: 0 1 620px
+
+.n-i
+	&-h
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		margin-bottom: 50px
+		&__p-w
+			flex: 0 1 555px
+			img
+				margin: 0
+		&__t-b
+			flex: 0 1 487px
+			h4
+				position: relative
+				margin-bottom: 60px
+				&:before
+					content: ''
+					position: absolute
+					bottom: -25px
+					left: 0
+					display: block
+					width: 131px
+					height: 3px
+					background-color: #64c8ff
+					background-image: linear-gradient(to right, #4b0096 0%, #64c8ff 100%)
+			p
+				margin-bottom: 20px
+				&:last-of-type
+					margin-bottom: 0
+	&-c
+	time
+		opacity: 0.48
+		color: #000000
+		font: 300 14px Montserrat
+		text-transform: uppercase
+		letter-spacing: 0.35px
+		margin-bottom: 10px
+		display: inline-block
+	p
+		color: #000000
+		font: 400 14px/24px Montserrat
+		letter-spacing: 0.7px
+		margin-bottom: 20px
+	ul
+		margin-bottom: 20px
+		li
+			position: relative
+			line-height: 24px
+			&:before
+				content: ''
+				background: #000
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				display: inline-block
+				margin-right: 10px
+	img
+		margin-bottom: 20px
+		width: auto
+	a
+		color: #4e18a3
+		font-weight: 700
+		letter-spacing: 0.7px
+		text-decoration: underline
+
+.single-news
+	h1, h2, h3, h4, h5, h6
+		margin-bottom: 20px
+		text-transform: initial
+	.aligncenter
+		max-width: 100%
+		display: block
+		margin: 0 auto
+	.alignleft
+		float: left
+		margin-right: 20px
+	.alignnone
+		float: none
+	.alignright
+		float: right
+		margin-left: 20px
+
+section.top
+	padding: 0
+	margin: 0
+	background: url("../images/fon.jpg")
+	background-position: center center
+	background-color: #060815
+	margin: 0px
+	background-color: #000000
+	width: 100%
+	height: 100%
+
+#globe
+	width: 100%
+	height: 100%
+	transition: opacity 0.3s
+
+#globe.static
+	background-image: url(../images/planet.png)
+	background-repeat: no-repeat
+	background-position: center center
+	width: 640px
+	height: 640px
+
+.globe-wrapper
+	background: #000
+	overflow: hidden
+	position: relative
+	z-index: 1
+
+.globe-container
+	position: relative
+	width: 100%
+	height: 100%
+	margin: 0 auto
+	canvas
+		margin: 0 auto
+		display: block
+
+.text-label
+	display: block
+	transition: opacity 0.5s ease, translate .1s
+	position: absolute
+
+.text-label .text
+	position: relative
+	z-index: 10
+	color: #031944
+	font-family: "Calibri"
+	font-size: 13px
+	background-color: rgba(255,255,255,0.8)
+	padding: 0 3px
+	line-height: 16px
+	cursor: pointer
+	transition: all 0.3s
+
+.popup
+	position: absolute
+	z-index: 11
+	display: none
+	left: -70px
+	top: 130px
+	max-height: 100%
+	overflow: hidden
+	padding: 20px
+	background: rgba(0, 0, 0, .45)
+	&.active
+		display: block
+
+.popup .inner
+	font: 400 11px/16px Montserrat
+	letter-spacing: 1.1px
+	text-transform: uppercase
+	color: #ffffff
+	display: block
+	p
+		margin-bottom: 20px
+	a
+		color: inherit
+		display: block
+	.email, .phone
+		font-weight: 700
+	.email
+		line-height: 30px
+	.phone
+		line-height: 22px
+		font-size: 16px
+
+.point
+	width: 40px
+	height: 40px
+	background-size: 40px 40px
+	display: block
+	position: absolute
+	margin-top: -19px
+	margin-left: -19px
+	opacity: 0
+	transition: opacity 0.3s ease
+
+.popup .title
+	font-size: 13px
+	font-weight: bold
+	margin-bottom: 20px
+	display: block
+
+.popup .descRow
+	display: block
+	margin-bottom: 10px
+
+.popup .subTitle
+	font-size: 13px
+	font-weight: bold
+	display: block
+
+#globe
+	position: relative
+	z-index: 1
+
+#markers
+	position: absolute
+	z-index: 10
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+#markers::before
+	content: ' '
+	width: 100%
+	height: 100%
+	display: block
+
+.container.map
+	position: relative
+	height: 100%
+	overflow: hidden
+	background: #000
+
+.world-container
+	margin-bottom: 35px
+
+.page-template-clients-opportunities-template
+	.b-universal
+		background: url(../img/oppbg.png) no-repeat left 220px #fff
+
+.page-template-clients-how_w_w-template
+	.b-universal
+		background: url(../img/hwwbg.png) no-repeat left 220px #fff
+
+.page-template-clients-adv-template
+	.b-universal
+		background: url(../img/advbg2.png) no-repeat left 220px #fff
+
+.page-template-investors-adv-template
+	.b-universal
+		background: url(../img/advbg3.png) no-repeat left 220px #fff
+
+.page-template-debtors-opportunities-template
+	.b-universal
+		background: url(../img/debopbg.png) no-repeat left 220px #fff
+
+.page-template-our-thinking-template
+	.b-universal
+		background: url(../img/thbg.png) no-repeat left 220px #fff
+
+.page-template-what-we-do-template
+	.b-universal
+		background: url(../img/wwdbg.png) no-repeat left 220px #fff
+
+.page-template-our-clients-template
+	.filter-b-w
+		&:hover
+			filter: grayscale(100%)
 
 
 @import "media"

@@ -1,0 +1,46 @@
+<section class="b-form">
+  <div class="container">
+    <h3>contact us</h3>
+    <div class="row">
+      <div class="b-form-f">
+        <div class="form-tabs">
+          <div class="form-tabs__forms">
+            <form method="post" class="form-contact" action="http://mbacgroup.com/wp-admin/admin-post.php">
+              <div class="form-tabs__wrap">
+                <input required type="text" placeholder="Name*" name="name">
+                <input required type="text" placeholder="Country" name="country">
+                <input type="text" placeholder="Media name" name="media name">
+                <input required type="phone" placeholder="Phone*" name="email">
+                <input required type="email" placeholder="Email*" name="email">
+              </div>
+              <div class="form-tabs__wrap">
+                <textarea rows="3" name="message" placeholder="Message"></textarea>
+                <div>
+                  <input required="" id="check-1" type="checkbox" name="checkbox">
+                  <label for="check-1" class="lb">
+                  </label>
+                  <span>I agree with</span>
+                  <a href="">Privacy policy on this website</a>
+                </div>
+                <input type="hidden" name="action" value="contact_form">
+                <input type="hidden" name="form" value="clients">
+                <div class="wr-form">
+                  <div data-callback="enableBtn" class="g-recaptcha" data-sitekey="6LfzfG4UAAAAAJn8Eo4sHnaUR4fX-j6J_xRDAen0">
+                    <div style="width: 304px; height: 78px;">
+                      <div>
+                        <iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfzfG4UAAAAAJn8Eo4sHnaUR4fX-j6J_xRDAen0&amp;co=aHR0cDovL21iYWNncm91cC5jb206ODA.&amp;hl=ru&amp;v=v1536705955372&amp;size=normal&amp;cb=bomvmrdjpo1z" width="304"
+                        height="78" role="presentation" name="a-4uyqno5sxze9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                      </div>
+                      <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea>
+                    </div>
+                  </div>
+                  <input class="b312 submit" type="submit" value="Send" disabled="">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

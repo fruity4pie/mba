@@ -1,24 +1,85 @@
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+  .map .logo
+    background-image: url(../images/logo_04_x2.png)
+    background-size: 160px 42px
+  .legend .close, .popup .close
+    background-image: url(../images/legend-close_x2.png)
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+  .map .logo
+    background-image: url(../images/logo_04_x3.png)
+    background-size: 160px 42px
+  .legend .close, .popup .close
+    background-image: url(../images/legend-close_x3.png)
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+  .legend .logo
+    background-image: url(../images/logo_04_x2.png)
+
+  .popup:before
+    background-image: url(../images/logo_04_x2.png)
+    background-size: 100% auto
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3 / 1), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx)
+  .legend .logo
+    background-image: url(../images/logo_04_x3.png)
+
+  .popup:before
+    background-image: url(../images/logo_04_x3.png)
+    background-size: 100% auto
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+  .map .scrollDown
+    background-image: url(../images/arrow-1_03_x2.png)
+    background-size: 20px 12px
+
 @media screen and (max-width: 1790px)
 	.b-our-goals__list
 		overflow-x: scroll
 
-@media screen and (max-width: 1366px)
-	#fp-nav.fp-right
-		right: 25px
+	.b-clients
+		&_wwe
+			height: auto
 
-@media screen and (max-width: 1280px)
-	.b-global-synergy
-		overflow: hidden
+	.values
+		h2
+			font-size: 24px
+			line-height: 22px
+			margin-bottom: 20px
+			&:after
+				bottom: -15px
+		p
+			line-height: 24px
+			font-size: 14px
+		.row
+			justify-content: space-around
+		.col
+			&:not(:last-child)
+				margin-bottom: 20px
+		.title-bg
+			top: 15.5%
+
+	.hands
+		background-position: -6% 75%
+		background-size: 575px
 		.t-b
-			h6
-				&:before
-					left: 0
-				&:after
-					right: -10px
+			&:before, &:after
+				font-size: 150px
+			&:before
+				top: -30px
+				left: -75px
+			&:after
+				bottom: 0
+				right: 50px
+		p
+			font-size: 20px
+
+@media screen and (max-width: 1440px)
+	#fp-nav.fp-right
+		right: 20px
 
 	.clients
 		.img-cont
-			height: 450px
 			&__item
 				&:first-child
 					max-width: 400px
@@ -30,25 +91,128 @@
 					max-width: 200px
 					height: 300px
 
-	.values
-		h2
-			font-size: 30px
-			line-height: 30px
-			margin-bottom: 40px
-		.col
-			&:not(:last-child)
-				margin-bottom: 40px
+	.news
 		.title-bg
-			top: 140px
+			top: 12.2%
+		&__item
+			&:not(:first-child)
+				.t-b
+					span
+						margin: 10px 0
+					h5
+						line-height: 28px
 
-	.hands
+@media screen and (max-width: 1439px)
+	.mba
+		h1
+			font-size: 90px
+			line-height: 80px
 		p
-			font-size: 24px
+			font-size: 25px
 
-	.b-y
-		&__i
-			&:before
-				left: 0 !important
+	.header
+		&__logo
+			img, svg
+				width: 65%
+		.nav
+			padding-top: 0
+			&__m-l
+				& li a
+					font-size: 13px
+		.lang
+			padding: 0
+			&__hidden
+				top: 50px
+
+	.clients
+		.row
+			justify-content: space-around
+		.t-b
+			p
+				margin-bottom: 50px
+		.col1
+			margin: 0
+		.img-cont
+			&__item
+				&:first-child
+					max-width: 300px
+					height: 350px
+				&:nth-child(2)
+					max-width: 200px
+					height: 270px
+					left: 180px
+				&:nth-child(3)
+					max-width: 100px
+					height: 200px
+					left: 325px
+				&:after
+					right: -30px
+					font-size: 14px
+
+	.b-footer
+		&_main
+			.b-l
+				&:first-child
+					display: none
+
+	.b459
+		width: 320px
+		height: 50px
+
+@media screen and (max-width: 1366px)
+	.b-our-clients
+		&_rec
+			.tabs
+				flex-flow: column nowrap
+				&__l
+					display: flex
+					flex-flow: row nowrap
+					flex: 0 1 100%
+					overflow-x: scroll
+					overflow-y: hidden
+					margin-bottom: 30px
+					li
+						&:not(:last-child)
+							margin: 0 25px 15px 0
+						a
+							&.active
+								font-size: inherit
+								&:after
+									display: none
+				&__i
+					flex-flow: column nowrap
+					flex: 0 1 auto
+					&-item
+						flex: 0 1 auto
+						p
+							&:before
+								display: none
+
+	.b-clients
+		&_thx
+			padding: 270px 0
+			h1
+				margin-bottom: 35px
+			p
+				margin: 0 auto 65px
+			a
+				margin: 0 auto
+
+@media screen and (max-width: 1280px)
+	.b-global-synergy
+		overflow: hidden
+		.t-b
+			h6
+				&:before
+					left: 0
+				&:after
+					right: -10px
+
+	.news
+		.title-bg
+			display: none
+		&-c1
+			padding: 0 20px
 
 	.b-resp
 		justify-content: space-around
@@ -57,6 +221,9 @@
 				margin-bottom: 40px
 
 @media screen and (max-width: 1140px)
+	#fp-nav.fp-right
+		right: 10px
+
 	.header
 		&__row
 			align-items: center
@@ -96,7 +263,91 @@
 					bottom: auto
 					right: auto
 
+	.b-prof
+		&__header, &__t
+			flex: 0 1 50%
+		&__t
+			&:not(:last-child)
+				margin-bottom: 20px
+		h3
+			font-size: 30px
+			line-height: 30px
+			max-width: 263px
+		p
+			&:first-child
+				font-size: 30px
+
+	.b-pres
+		&__btn, &__t
+			flex: 0 1 50%
+		&__t
+			&:not(:last-child)
+				margin-bottom: 25px
+			p
+				&:first-child
+					font-weight: 700
+
+	.b-universal
+		&_7
+			.t-b
+				&__t
+					&:after
+						display: none
+
+	.b-consult
+		padding: 80px 0 190px
+
+	.b-pres
+		margin-bottom: 50px
+	.b-prof
+		&:not(:last-child)
+			margin-bottom: 50px
+
+	.b-corp
+		margin-bottom: 40px
+		&__i
+			&:not(:last-child)
+				margin-bottom: 20px
+		div
+			flex: 0 1 50%
+
+	.b-est
+		&__i
+			&:not(:last-child)
+				margin-bottom: 20px
+		div
+			flex: 0 1 50%
+
 @media screen and (max-width: 1024px)
+	.b-our-clients
+		&_wwa
+			.tabs
+				flex: 0 1 auto
+				flex-flow: column nowrap
+				&__l
+					display: flex
+					flex-flow: row nowrap
+					flex: 0 1 auto
+					margin-bottom: 25px
+					li
+						&:not(:last-child)
+							margin: 0 25px 0 0
+						a
+							&.active
+								font-size: inherit
+								&:after
+									display: none
+				&__i
+					flex: 0 1 auto
+					&-item
+						&-main
+							width: 100%
+							margin-bottom: 35px
+						&-cont
+							display: flex
+							flex-flow: row wrap
+							justify-content: space-around
+
 	.b-principles
 		.b-l
 			&__i
@@ -134,6 +385,11 @@
 			li:not(:last-child)
 			a
 				font-size: 10px
+
+	.stories
+		p
+			max-width: none
+			margin: 0 0 20px
 
 @media screen and (max-width: 992px)
 	.b-choose-us
@@ -202,6 +458,20 @@
 			&:before
 				left: 0
 
+	.b-consult
+		h2
+			margin-bottom: 75px
+
+	.b-y
+		margin-bottom: 60px
+		&__i
+			&:before
+				left: 0 !important
+			&:nth-child(4n+1), &:nth-child(5n+2), &:nth-child(6n+3)
+				align-self: auto
+				&:not(:last-child)
+					margin: 0 0 55px
+
 	.b-inv-team
 		.img-c
 			flex-flow: row wrap
@@ -211,6 +481,45 @@
 				&:not(:last-child)
 					margin-bottom: 35px
 
+	.b-universal
+		&_7
+			.t-b
+				flex-flow: column nowrap
+				&__t
+					margin-bottom: 40px
+
+	.form-tabs
+		&__forms
+			.form-tabs__wrap
+				input
+					max-width: 100%
+					margin-right: 0
+					&:not(:last-child)
+						margin-right: 0
+
+	.b-clients
+		&_thx
+			padding: 150px 0
+			h1
+				margin-bottom: 35px
+			p
+				margin: 0 auto 65px
+			a
+				margin: 0 auto
+
+	.b-consult
+		h2
+			&:after
+				display: none
+
+@media screen and (max-width: 900px)
+	.header
+		&__logo
+			img, svg
+				width: 50%
+				padding: 5px 0
+
+
 @media screen and (max-width: 767px)
 	h1
 		font-size: 48px
@@ -218,6 +527,19 @@
 	h2
 		font-size: 36px
 		line-height: 36px
+
+	.mba
+		.col
+			flex: 0 1 75%
+		h1
+			font-size: 30px
+			line-height: 30px
+			margin-bottom: 10px
+			&:before
+				display: none
+		p
+			font-size: 25px
+			line-height: 25px
 
 	.b-clients-img
 		.b-l
@@ -332,6 +654,149 @@
 					&:not(:last-child)
 						margin-bottom: 25px
 
+	.b-our-clients
+		.tabs
+			&__i
+				&-item
+					&-main
+						img
+							margin-bottom: 10px
+						.t-b
+							position: relative
+							color: #000
+							bottom: auto
+							left: auto
+							span
+								color: #000
+							h5
+								font-size: 18px
+								line-height: 20px
+
+	.m-menu
+		&-header, &-list
+			padding: 15px 15px 0 15px
+		&-list
+			& > li
+				& > a
+					font-size: 22px
+					line-height: 30px
+		&-s-list
+			position: relative
+			top: auto
+			left: auto
+			height: auto
+			padding: 0
+
+	.b-clients
+		&_thx
+			padding: 150px 0
+			h1
+				margin-bottom: 35px
+			p
+				margin: 0 auto 65px
+			a
+				margin: 0 auto
+			.b-l
+				&__i
+					width: 100%
+					&:not(:last-child)
+						margin-bottom: 30px
+			.t-b
+				width: 100%
+				margin: 0 !important
+
+	.b-corp
+		margin-bottom: 20px
+		&__i
+			p
+				&:first-child
+					font-size: 30px
+		div
+			flex: 0 1 100%
+			&:not(:last-child)
+				margin-bottom: 10px
+
+	.b-est
+		div
+			flex: 0 1 100%
+			&:not(:last-child)
+				margin-bottom: 10px
+
+@media screen and (min-width: 750px)
+  .showLegend
+    display: none
+
+@media screen and (max-width: 749px)
+  .legend .helper
+    display: none
+
+  .popup
+    position: fixed
+    left: 0
+    display: block
+
+  .popup .title, .popup .subTitle
+    font-size: 16px
+    font-weight: normal
+
+  .popup .inner
+    background: none
+    border: 0
+    font-size: 16px
+    font-weight: bold
+    display: block
+    margin-left: 77px
+    margin-right: 20px
+    margin-top: 80px
+
+  .popup:before
+    margin-top: 20px
+    display: block
+    background-image: url(../images/logo-map.png)
+    width: 160px
+    height: 42px
+    background-position: 0 -42px
+    content: ''
+    margin-left: 25px
+
+
+  .legend, .popup
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.75)
+    right: 0
+    z-index: 100
+    transform: translate(0px,-100%)
+    transition: all 0.3s ease-in-out
+    overflow: hidden
+    top: 0
+    position: fixed
+
+  #markers
+    width: 640px
+    height: 640px
+
+  #markers.opened
+    z-index: 100
+
+  .popup
+    z-index: 101
+
+  .legend.opened, .popup.opened
+    display: block
+    transform: translate(0px,0px)
+
+  .legend ul
+    margin-left: 87px
+    margin-right: 20px
+
+  .legend .close, .popup .close
+    display: block
+
+  .legend .logo
+    display: block
+    background-position: 0 -42px
+    background-image: url(../images/logo_04.png)
 
 @media screen and (max-width: 599px)
 	h1
@@ -446,9 +911,21 @@
 				line-height: 25px
 		.t-l
 			&__i
-				margin-bottom: 30px
+				margin: 0
+				&:not(:last-child)
+					margin-bottom: 50px
+			&__c
+				max-width: none
+				padding-right: 30px
+				text-align: center
+			.content-w
+				p
+					margin: 0 auto
+					word-wrap: break-word
 			img
-				display: none
+				position: relative
+				bottom: auto
+				right: auto
 
 	.tabs
 		&__i
@@ -483,6 +960,10 @@
 				p
 					&:first-child
 						font-size: 18px
+		&_story
+			padding: 120px 0 0
+			.b-c, h1
+				margin-bottom: 15px
 
 	.b-cap-t
 		h3
@@ -504,16 +985,6 @@
 					&:nth-child(2)
 						margin-bottom: 30px
 
-	.t-l
-		&__i
-			margin: 0
-			&:not(:last-child)
-				margin-bottom: 50px
-			img
-				display: none
-		&__c
-			max-width: none
-
 	.b-footer
 		.b-l
 			&:first-child
@@ -521,6 +992,87 @@
 					flex: 0 0 33%
 					&:not(:last-child)
 						margin-bottom: 25px
+
+	.b-y
+		&__i
+			&:nth-child(4n+1), &:nth-child(5n+2), &:nth-child(6n+3)
+				&:before
+					font-size: 69px
+
+	.b-prof
+		margin-bottom: 40px
+		&__header, &__t
+			flex: 0 1 100%
+		&__header
+			margin-bottom: 20px
+
+	.b-pres
+		&__btn, &__t
+			flex: 0 1 100%
+
+	.b-resp
+		&__img-wrap
+			&:after
+				left: 0
+		&__t-wrap
+			padding: 20px 35px 20px 20px
+			min-height: auto
+		h3
+			left: 10px
+		p
+			&:last-of-type
+				margin-bottom: 20px
+		a
+			margin: 0
+
+	.form-tabs__list
+		margin-bottom: 20px
+
+	.b-clients
+		&_thx
+			height: 100vh
+			padding: 30vh 0
+			h1
+				margin-bottom: 35px
+			p
+				margin: 0 auto 65px
+			a
+				margin: 0 auto
+
+	.b-consult
+		padding: 40px 0 135px
+		h2
+			margin-bottom: 35px
+
+	.b-pres
+		margin-bottom: 25px
+		&__t
+			&:not(:last-child)
+				margin-bottom: 10px
+		h5
+			margin-bottom: 0
+		p
+			font-size: 20px
+
+	.b-prof
+		&:not(:last-child)
+			margin-bottom: 25px
+		h4
+			font-size: 20px
+		p
+			font-size: 17px
+
+	.b-corp
+		&__i
+			p
+				&:first-child
+					font-size: 18px
+
+	.b-est
+		&__i
+			p
+				&:not(:first-of-type)
+					font-size: 18px
 
 @media screen and (max-width: 480px)
 	.b-interaction, .b-choose-us, .b-principles, .b-head-office, .b-gallery, .b-clients-img, .b-ethics, .b-atten, .b-investments, .b-global-synergy, .b-inv-team, .b-principles2, .b-recommend, .b-debt, .b-investments, .b-penalty, .b-work, .b-phy, .b-why
@@ -536,7 +1088,6 @@
 		&__i
 			&-item
 				flex: 0 1 100%
-				margin-bottom: 30px
 			.i-w
 				margin-bottom: 15px
 
@@ -544,6 +1095,12 @@
 		&-t-a
 			position: static
 			color: #000
+
+	.b-y
+		&__i
+			&:nth-child(4n+1), &:nth-child(5n+2), &:nth-child(6n+3)
+				&:before
+					font-size: 60px
 
 	.b-footer
 		.b-l
@@ -553,8 +1110,47 @@
 					&:not(:last-child)
 						margin-bottom: 25px
 
+	#globe.static
+	  background-size: 480px 480px
+	  width: 480px
+	  height: 480px
+
+	#markers
+	  width: 480px
+	  height: 480px
+
+	.leftDots
+	  width: 55%
+
+	.leftDots ul
+	  margin-top: 30px
+
+	.leftDots ul li
+	  margin-bottom: 13px
+
+@media screen and (max-width: 479px)
+  #globe.static
+    background-size: 320px 320px
+    width: 320px
+    height: 320px
+
+  #markers
+    width: 320px
+    height: 320px
+
+  .text-label .text
+    font-size: 8px
+
 @media screen and (max-width: 400px)
 	.b-clients-img
 		.b-l
 			&__i
 				flex: 0 0 100%
+
+@media screen and (max-width: 374px)
+	.b-universal
+		&_story
+			height: auto
+			padding: 120px 0 0
+			.b-c, h1
+				margin-bottom: 25px

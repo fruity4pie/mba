@@ -8,7 +8,7 @@ rename       = require('gulp-rename'), // Подключаем библиоте�
 sass         = require('gulp-sass'), //Подключаем Sass пакет,
 uglify       = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
 babel        = require('gulp-babel'),
-rigger = require('gulp-rigger');
+rigger       = require('gulp-rigger');
 
 
 function onError(err) {
@@ -50,9 +50,11 @@ gulp.task('css-libs', ['sass'], function() {
 gulp.task('scripts', function() {
   return gulp.src([ // Берем все необходимые библиотеки
     'app/libs/jquery/dist/jquery.js',
-    'app/libs/chart.js/dist/Chart.js',
     'app/libs/fullpage/dist/fullpage.js',
+    'app/libs/chart.js/dist/Chart.js',
     'app/libs/owl.carousel/dist/owl.carousel.js',
+    'app/libs/fancybox/dist/jquery.fancybox.js',
+    'app/libs/chartjs-plugin-labels/src/chartjs-plugin-labels.js',
 		'app/js/main.js'
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
